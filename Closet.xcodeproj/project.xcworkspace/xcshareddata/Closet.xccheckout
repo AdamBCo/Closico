@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>100C1FD0-486F-49C6-B41F-1A7E7090E93F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Closet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8160291E5A87FE8A562D5D285BE8A7FA6E23ACEC</key>
+		<string>https://github.com/AdamBCo/Closico.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Closet.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8160291E5A87FE8A562D5D285BE8A7FA6E23ACEC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AdamBCo/Closico.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8160291E5A87FE8A562D5D285BE8A7FA6E23ACEC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8160291E5A87FE8A562D5D285BE8A7FA6E23ACEC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Closico</string>
+		</dict>
+	</array>
+</dict>
+</plist>
