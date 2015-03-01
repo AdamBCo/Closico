@@ -24,7 +24,17 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {

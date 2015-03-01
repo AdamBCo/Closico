@@ -57,6 +57,9 @@ typedef NS_ENUM(NSUInteger, TableView){
     [self.addNewButton setTintColor:[UIColor whiteColor]];
     [self.addNewButton addTarget:self action:@selector(onCreateNewItemButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.addButtonView addSubview:self.addNewButton];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
 
     
 //        if (![[Digits sharedInstance] session].phoneNumber) {
@@ -148,6 +151,7 @@ typedef NS_ENUM(NSUInteger, TableView){
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+
 }
 
 -(void)viewDidLayoutSubviews
@@ -158,6 +162,14 @@ typedef NS_ENUM(NSUInteger, TableView){
     
     if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if ([self.recomendationsTableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.recomendationsTableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.recomendationsTableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.recomendationsTableView setLayoutMargins:UIEdgeInsetsZero];
     }
 }
 

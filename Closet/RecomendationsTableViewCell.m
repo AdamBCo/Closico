@@ -36,9 +36,15 @@
     self.toolbarView.layer.shadowOffset = CGSizeMake(0,1);
     self.toolbarView.layer.shadowOpacity = 0.5;
     self.toolbarView.layer.shadowRadius = 1;
+    
+    self.brandProfileView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.brandProfileView.layer.shadowOffset = CGSizeMake(0,1);
+    self.brandProfileView.layer.shadowOpacity = 0.5;
+    self.brandProfileView.layer.shadowRadius = 1;
 
     self.brandImageView.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.brandImageView.layer.borderWidth = .5;
+    self.brandImageView.layer.cornerRadius = self.brandImageView.frame.size.width/2;
 
 
 }

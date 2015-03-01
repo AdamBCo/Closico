@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UIView *toolbarView;
+@property (weak, nonatomic) IBOutlet UIView *brandProfileView;
 
 @property id<RecomendationCellDelgate> delegate;
 

@@ -37,10 +37,7 @@
     // Set as delegate of 'menu item view'
     [self.menuItemView setDelegate:self];
     
-    self.closeButton.layer.cornerRadius = 5;
-    self.closeButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.closeButton.layer.borderWidth = 1;
-    
+    self.closeButton.layer.cornerRadius = self.closeButton.frame.size.width/2;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -72,6 +69,7 @@
 }
 
 - (IBAction)onCloseButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
