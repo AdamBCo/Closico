@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_Background" translatesAutoresizingMaskIntoConstraints="NO" id="1ck-v9-2Oi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_Background" translatesAutoresizingMaskIntoConstraints="NO" id="1ck-v9-2Oi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
@@ -635,7 +635,7 @@
         <image name="dollar_icon" width="21" height="21"/>
         <image name="female_shoe" width="64" height="64"/>
         <image name="like_icon" width="21" height="21"/>
-        <image name="login_Background" width="320" height="568"/>
+        <image name="login_Background" width="1000" height="835"/>
         <image name="logo" width="75" height="75"/>
         <image name="options_icon" width="21" height="21"/>
         <image name="save_icon" width="21" height="21"/>

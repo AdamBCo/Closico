@@ -22,13 +22,14 @@
     // Twitter Digits Setup.
     
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        NSLog(@"The user logged in");
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"The has logged in.");
 
     }];
     
+    authenticateButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height*.9);
     [self.view addSubview:authenticateButton];
-    authenticateButton.center = self.view.center;
-
 }
 
 

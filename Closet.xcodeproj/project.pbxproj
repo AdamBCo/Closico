@@ -43,6 +43,7 @@
 		87A9FF101AA303A60060E1DA /* ASOBounceButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF0A1AA303A60060E1DA /* ASOBounceButtonView.m */; };
 		87A9FF111AA303A60060E1DA /* ASOTwoStateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF0E1AA303A60060E1DA /* ASOTwoStateButton.m */; };
 		87A9FF141AA305180060E1DA /* BounceButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF131AA305180060E1DA /* BounceButtonView.m */; };
+		87E4A7821AA3315C00305DDB /* TypeOfItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4A7811AA3315C00305DDB /* TypeOfItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		87A9FF0E1AA303A60060E1DA /* ASOTwoStateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASOTwoStateButton.m; sourceTree = "<group>"; };
 		87A9FF121AA305180060E1DA /* BounceButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceButtonView.h; sourceTree = "<group>"; };
 		87A9FF131AA305180060E1DA /* BounceButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceButtonView.m; sourceTree = "<group>"; };
+		87E4A7801AA3315C00305DDB /* TypeOfItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeOfItem.h; sourceTree = "<group>"; };
+		87E4A7811AA3315C00305DDB /* TypeOfItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeOfItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +232,8 @@
 				871F34381AA145AC00D5B4A5 /* User.m */,
 				871F34241AA11BD900D5B4A5 /* Item.h */,
 				871F34251AA11BD900D5B4A5 /* Item.m */,
+				87E4A7801AA3315C00305DDB /* TypeOfItem.h */,
+				87E4A7811AA3315C00305DDB /* TypeOfItem.m */,
 				871F34341AA141D400D5B4A5 /* Brand.h */,
 				871F34351AA141D400D5B4A5 /* Brand.m */,
 				871F34601AA16C0C00D5B4A5 /* Recomendation.h */,
@@ -458,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A9FF141AA305180060E1DA /* BounceButtonView.m in Sources */,
+				87E4A7821AA3315C00305DDB /* TypeOfItem.m in Sources */,
 				871F34621AA16C0C00D5B4A5 /* Recomendation.m in Sources */,
 				871F342A1AA11CDC00D5B4A5 /* BrandTableViewCell.m in Sources */,
 				871F34361AA141D400D5B4A5 /* Brand.m in Sources */,

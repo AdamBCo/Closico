@@ -43,9 +43,7 @@ typedef NS_ENUM(NSUInteger, TableView){
     
     self.addButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width *.18, self.view.frame.size.width *.18)];
     self.addButtonView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height-30);
-    
-//    self.addButtonView.backgroundColor = [UIColor colorWithWhite:0.859 alpha:1.000];
-    self.addButtonView.layer.cornerRadius = 10;
+        self.addButtonView.layer.cornerRadius = 10;
     [self.navigationController.view addSubview:self.addButtonView];
     
     
@@ -61,14 +59,15 @@ typedef NS_ENUM(NSUInteger, TableView){
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
 
-    
-//        if (![[Digits sharedInstance] session].phoneNumber) {
-//            [self performSegueWithIdentifier:@"LoginViewSegue" sender:self];
-//        }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if ([[Digits sharedInstance] session].phoneNumber) {
+        [self performSegueWithIdentifier:@"LoginViewSegue" sender:self];
+    }
+    
     if (self.addButtonView.alpha == 0) {
         self.addButtonView.alpha = 1;
     }
