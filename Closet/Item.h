@@ -17,16 +17,19 @@
 
 @property (readonly) NSNumber *id;
 @property (readonly) NSString *name;
-@property (readonly) NSString *description;
-@property (readonly) NSString *typeName;
+@property (readonly) NSString *brand;
+@property (readonly) NSNumber *categoryID;
+
+//@property (readonly) NSString *description;
+//@property (readonly) NSString *typeName;
 @property (readonly) NSURL *productURL;
-@property (readonly) NSString *color;
-@property (readonly) NSNumber *upcNumber;
-@property (readonly) NSArray *styles;
-
-
-@property (readonly) UIImage *standardResolutionImage;
+//@property (readonly) NSString *color;
+//@property (readonly) NSNumber *upcNumber;
+//@property (readonly) NSArray *styles;
+@property NSData *standardResolutionImageData;
 @property (readonly) NSURL *standardResolutonImageURL;
+
+-(instancetype)initItemWithProductData:(NSDictionary *)productData;
 
 
 

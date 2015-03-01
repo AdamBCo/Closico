@@ -8,6 +8,7 @@
 
 #import "TypeOfItemViewController.h"
 #import "BrandTableViewController.h"
+#import "TOIDetailCollectionViewCell.h"
 
 @interface TypeOfItemViewController ()
 <
@@ -17,6 +18,14 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 @property (weak, nonatomic) IBOutlet UITableView *TOITableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *TOICollectionView;
+
+@property NSArray *tops;
+@property NSArray *bottoms;
+@property NSArray *skirts;
+@property NSArray *dresses;
+@property NSArray *bags;
+@property NSArray *shoes;
+
 
 @end
 
@@ -29,6 +38,26 @@ UICollectionViewDelegate, UICollectionViewDataSource
     self.navigationItem.backBarButtonItem = backButton;
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+    
+    self.tops = @[@{@"categoryName": @"T-Shirt",@"categoryID":@"12345",@"categoryIcon":@"tShirtIcon"},
+                  @{@"categoryName": @"Sleeveless",@"categoryID":@"12345",@"categoryIcon":@"sleevelessIcon"},
+                  @{@"categoryName": @"Long Sleeve",@"categoryID":@"12345",@"categoryIcon":@"longSleeveIcon"},
+                  @{@"categoryName": @"Tank Tops",@"categoryID":@"12345",@"categoryIcon":@"tankTopIcon"},
+                  @{@"categoryName": @"Blouses",@"categoryID":@"12345",@"categoryIcon":@"blouseIcon"},
+                  @{@"categoryName": @"Bralets",@"categoryID":@"12345",@"categoryIcon":@"braletIcon"}];
+    
+//    self.bottoms = @[@{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    @{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    @{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    @{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    @{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    @{@"categoryName": @"",@"categoryID":@"",@"categoryIcon":@""}
+//                    ];
+//    
+    
+    
 
 }
 
@@ -82,11 +111,15 @@ UICollectionViewDelegate, UICollectionViewDataSource
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    return self.tops.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TOIDetailCell" forIndexPath:indexPath];
+    NSDictionary *item = [self.tops objectAtIndex:indexPath.section];
+    TOIDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TOIDetailCell" forIndexPath:indexPath];
+    cell.iconTitleView.text = [item objectForKey:@"categoryName"];
+    cell.iconImageView.image = [UIImage imageNamed:[item objectForKey:@"categoryIcon"]];
+    
     return cell;
 }
 

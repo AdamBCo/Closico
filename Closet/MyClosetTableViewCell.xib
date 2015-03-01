@@ -35,6 +35,10 @@
                     <constraint firstItem="7M0-Pz-9eg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="uID-hs-weO"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="clothingIcon" destination="7M0-Pz-9eg" id="nde-LE-XXS"/>
+                <outlet property="clothingTitle" destination="WlO-jb-Xki" id="iDZ-Oh-f9e"/>
+            </connections>
             <point key="canvasLocation" x="283" y="418"/>
         </tableViewCell>
     </objects>

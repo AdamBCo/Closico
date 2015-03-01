@@ -8,18 +8,30 @@
 
 #import "MyClosetViewController.h"
 #import "MyClosetManager.h"
+#import "TrendingItemsManager.h"
 #import "MyClosetTableViewCell.h"
-#import "RecomendationsTableViewCell.h"
+#import "TrendingTableViewCell.h"
 #import <TwitterKit/TwitterKit.h>
+#import "SCLAlertView.h"
+#import "TrendingItemDetailViewController.h"
+#import "Item.h"
+#import "TypeOfItemViewController.h"
 
 @interface MyClosetViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITableView *recomendationsTableView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
-@property UIView *addButtonView;
-@property UIButton *addNewButton;
+
+@property Item *selectedItem;
+@property (weak, nonatomic) IBOutlet UIButton *addNewItemButton;
+@property (weak, nonatomic) IBOutlet UIButton *optionSwitchButton;
 
 @property BOOL closetIsShowing;
+
+@property (nonatomic, strong) NSURLSessionConfiguration *sessionConfig;
+@property (nonatomic, strong) NSURLSession *session;
+
+
+@property NSArray *typesOfClothes;
 
 @end
 
@@ -35,26 +47,31 @@ typedef NS_ENUM(NSUInteger, TableView){
     [super viewDidLoad];
     self.closetIsShowing = YES;
     
+    self.sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    self.session = [NSURLSession sessionWithConfiguration:self.sessionConfig delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    [[TrendingItemsManager sharedClient] downloadItemswithSearchTerm:@"dress" andImageWidth:[UIScreen mainScreen].applicationFrame.size.width withCompletion:^{
+        [self.recomendationsTableView reloadData];
+    }];
+    
+    self.typesOfClothes = @[@"Tops",@"Bottoms",@"Dresses",@"Shoes",@"Accessories"];
+    
+    
+    
+
     [self.tableView registerNib:[UINib nibWithNibName:@"MyClosetTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MyClosetTableViewCell reuseidentifier]];
     
     
-    [self.recomendationsTableView registerNib:[UINib nibWithNibName:@"RecomendationsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[RecomendationsTableViewCell reusidentifier]];
+    [self.recomendationsTableView registerNib:[UINib nibWithNibName:@"TrendingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[TrendingTableViewCell reusidentifier]];
     
     
-    self.addButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width *.18, self.view.frame.size.width *.18)];
-    self.addButtonView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height-30);
-        self.addButtonView.layer.cornerRadius = 10;
-    [self.navigationController.view addSubview:self.addButtonView];
+
+    self.addNewItemButton.layer.cornerRadius = 15;
+//    [self.addNewButton setTintColor:[UIColor whiteColor]];
+//    [self.addNewButton addTarget:self action:@selector(onCreateNewItemButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    [self.addButtonView addSubview:self.addNewButton];
     
     
-    self.addNewButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.addButtonView.frame.size.width*.90, self.addButtonView.frame.size.width*.90)];
-    self.addNewButton.center = CGPointMake(self.addButtonView.bounds.size.width/2, self.addButtonView.bounds.size.height/2);
-    [self.addNewButton setImage:[UIImage imageNamed:@"plus_icon"] forState:UIControlStateNormal];
-    self.addNewButton.backgroundColor = [UIColor colorWithWhite:0.356 alpha:1.000];
-    self.addNewButton.layer.cornerRadius = 15;
-    [self.addNewButton setTintColor:[UIColor whiteColor]];
-    [self.addNewButton addTarget:self action:@selector(onCreateNewItemButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.addButtonView addSubview:self.addNewButton];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -67,16 +84,12 @@ typedef NS_ENUM(NSUInteger, TableView){
     if ([[Digits sharedInstance] session].phoneNumber) {
         [self performSegueWithIdentifier:@"LoginViewSegue" sender:self];
     }
-    
-    if (self.addButtonView.alpha == 0) {
-        self.addButtonView.alpha = 1;
-    }
+
 }
 
--(void)onCreateNewItemButtonPressed {
-    [self performSegueWithIdentifier:@"CreateItemSegue" sender:self];
-    self.addButtonView.alpha = 0;
+- (IBAction)onCreateNewItemButtonPressed:(id)sender {
     
+    [self performSegueWithIdentifier:@"CreateItemSegue" sender:self];
 
 }
 
@@ -88,16 +101,15 @@ typedef NS_ENUM(NSUInteger, TableView){
 
 
 
-- (IBAction)onSwitchViewButtonPressed:(UIBarButtonItem*)sender {
+- (IBAction)onSwitchViewButtonPressed:(UIButton*)sender {
     
     if (self.tableView.alpha == 0) {
         
         [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.tableView.alpha = 1;
-            [sender setImage:[UIImage imageNamed:@"stars_icon"]];
+            [sender setImage:[UIImage imageNamed:@"stars_icon"] forState:UIControlStateNormal];
             self.title = @"Closet";
-
-
+            
         } completion:^(BOOL finished) {
             [self.tableView reloadData];
         }];
@@ -108,7 +120,8 @@ typedef NS_ENUM(NSUInteger, TableView){
         [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             self.tableView.alpha = 0;
-            [sender setImage:[UIImage imageNamed:@"closet_icon"]];
+            [sender setImage:[UIImage imageNamed:@"closet_icon"] forState:UIControlStateNormal];
+
             self.title = @"Recomendations";
 
         } completion:^(BOOL finished) {
@@ -129,7 +142,13 @@ typedef NS_ENUM(NSUInteger, TableView){
 #pragma mark - Table view data source
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"DetailViewSegue" sender:self];
+    
+    if([tableView isEqual:self.tableView]) {
+        NSLog(@"HELLO WORLD!");
+    } else {
+        self.selectedItem = [[TrendingItemsManager sharedClient].trendingItems objectAtIndex:indexPath.section];
+        [self performSegueWithIdentifier:@"DetailViewSegue" sender:self];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -175,11 +194,24 @@ typedef NS_ENUM(NSUInteger, TableView){
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     if([tableView isEqual:self.tableView]) {
-        return [MyClosetManager sharedClient].closetItems.count;
+        return self.typesOfClothes.count;
     } else {
-        return 20;
+        return [TrendingItemsManager sharedClient].trendingItems.count;
     }
     return 10;;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+        if ([segue.identifier isEqualToString:@"DetailViewSegue"]) {
+
+            TrendingItemDetailViewController *destinationViewController = segue.destinationViewController;
+            destinationViewController.selectedItem = self.selectedItem;
+        } else if ([segue.identifier isEqualToString:@"CreateItemSegue"]) {
+            
+            TypeOfItemViewController *destinationViewController = segue.destinationViewController;
+        }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -190,16 +222,100 @@ typedef NS_ENUM(NSUInteger, TableView){
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if([tableView isEqual:self.tableView]) {
         MyClosetTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[MyClosetTableViewCell reuseidentifier] forIndexPath:indexPath];
+        cell.clothingTitle.text = [self.typesOfClothes objectAtIndex:indexPath.section];
+        
+        if (indexPath.section == 0) {
+            
+            cell.clothingIcon.image = [UIImage imageNamed:@"shirt_Icon"];
+            
+        } else if (indexPath.section == 1) {
+            
+            cell.clothingIcon.image = [UIImage imageNamed:@"bottoms_icon"];
+            
+        } else if (indexPath.section == 2) {
+            
+            cell.clothingIcon.image = [UIImage imageNamed:@"dress_icon"];
+            
+        }else if (indexPath.section == 3) {
+            cell.clothingIcon.image = [UIImage imageNamed:@"female_shoe"];
+            
+        }else if (indexPath.section == 4) {
+            cell.clothingIcon.image = [UIImage imageNamed:@"accessories_icon"];
+            
+        }else if (indexPath.section == 5) {
+            
+        }
+        
         return cell;
     } else {
-        RecomendationsTableViewCell *cell = [self.recomendationsTableView dequeueReusableCellWithIdentifier:[RecomendationsTableViewCell reusidentifier] forIndexPath:indexPath];
-        return cell;
+        Item *item = [[TrendingItemsManager sharedClient].trendingItems objectAtIndex:indexPath.section];
+        TrendingTableViewCell *cell = [self.recomendationsTableView dequeueReusableCellWithIdentifier:[TrendingTableViewCell reusidentifier] forIndexPath:indexPath];
+        cell.brandName.text = item.brand;
+        cell.itemName.text = item.name;
+        
+        
+        NSURL *standardImageURL = item.standardResolutonImageURL;
+        NSLog(@"URL: %@",standardImageURL);
+        NSString *key = standardImageURL.absoluteString;
+        
+        if (standardImageURL) {
+            if ([[TrendingItemsManager sharedClient].itemImageCache objectForKey:key]) {
+                cell.itemImageView.image = [[TrendingItemsManager sharedClient].itemImageCache objectForKey:key];
+            } else {
+
+        if (cell.standardImageDownloadTask) {
+                [cell.standardImageDownloadTask cancel];
+        }
+        cell.standardImageDownloadTask = [self.session dataTaskWithURL:standardImageURL
+                                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                         
+                                         if (error) {
+                                             if([error code] == NSURLErrorCancelled) {
+                                                 return;
+                                             }else {
+                                                 NSLog(@"ERROR: %@", error);
+                                             };
+                                         } else {
+                                             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                                             if (httpResponse.statusCode == 200) {
+                                                 UIImage *image = [UIImage imageWithData:data];
+                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                     
+                                                     [[TrendingItemsManager sharedClient].itemImageCache setObject:image forKey:key];
+                                                         cell.itemImageView.image = image;
+                                                     item.standardResolutionImageData = UIImagePNGRepresentation(image);
+                                                 });
+                                             } else {
+                                                 NSLog(@"Couldn't load image at URL: %@", standardImageURL);
+                                                 NSLog(@"HTTP %ld", (long)httpResponse.statusCode);
+                                             }
+                                         }
+                                     }];
+            [cell.standardImageDownloadTask resume];
+            return cell;
+        }
+        }
     }
     
     return nil;
     
 }
 
+- (IBAction)onSettingsButtonPushed:(id)sender {
+    
+    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+
+    //Using Block
+    [alert addButton:@"Logout" actionBlock:^(void) {
+        NSLog(@"The User has Logged Out");
+        [[Digits sharedInstance] logOut];
+        [self performSegueWithIdentifier:@"LoginViewSegue" sender:self];
+    }];
+    
+    [alert showSuccess:self title:@"Logout" subTitle:@"Are you sure you would like to logout of the application?" closeButtonTitle:@"Cancel" duration:0.0f];
+
+}
 
 
 @end

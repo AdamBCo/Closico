@@ -42,24 +42,12 @@
     
 }
 
--(NSString *)description {
+-(NSString *)brand {
     NSString *string = [NSString new];
     
-    if(json [@"summary"][@"description"] != [NSNull null]){
-        return json [@"summary"][@"description"];
+    if(json [@"summary"][@"brand"] != [NSNull null]){
+        return json [@"summary"][@"brand"];
     }
-    return string;
-    
-    
-}
-
--(NSString *)typeName {
-    NSString *string = [NSString new];
-    
-    if(json [@"summary"][@"producttype"] != [NSNull null]){
-        return json [@"summary"][@"description"];
-    }
-    return string;
     return string;
     
     
@@ -72,6 +60,27 @@
     }
     return url;
 }
+
+
+-(NSURL *)standardResolutonImageURL{
+    NSURL *url = [NSURL new];
+    if([json [@"image"] firstObject] != [NSNull null]){
+        NSString *theURLString = [json [@"image"] firstObject][@"imageurl"];
+        return [NSURL URLWithString:theURLString];
+    }
+    return url;
+}
+
+-(NSNumber *)categoryID{
+    NSNumber *number = [NSNumber new];
+    
+    if([json [@"image"] firstObject] != [NSNull null]){
+        return [json [@"image"] firstObject][@"id"];
+    }
+    return number;
+    
+}
+
 
 
 

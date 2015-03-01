@@ -10,6 +10,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
+#import <Firebase/Firebase.h>
 
 
 @interface AppDelegate ()
@@ -22,6 +23,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [Fabric with:@[CrashlyticsKit, TwitterKit]];
+    
+//     Create a reference to a Firebase location
+//    Firebase *fireBase = [[Firebase alloc] initWithUrl:@"https://torrid-heat-6978.firebaseio.com"];
+//    // Write data to Firebase
+//    [fireBase setValue:@"Do you have data? You'll love Firebase."];
+//    
+//    // Read data and react to changes
+//    [fireBase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+//    }];
 
 
     

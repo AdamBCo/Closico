@@ -10,6 +10,8 @@
 
 @interface MyClosetTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *clothingIcon;
+@property (weak, nonatomic) IBOutlet UILabel *clothingTitle;
 +(NSString *)reuseidentifier;
 
 @end

@@ -95,7 +95,7 @@
 "ERROR_CHECK_CONNECTION_TRY_AGAIN" = "Please check your network connection and try again";
 
 /* Authenticate button label */
-"BUTTON_AUTHENTICATE" = "Use my phone number";
+"BUTTON_AUTHENTICATE" = "Login With Phone Number";
 
 /* PIN Code entry screen header label */
 "LABEL_ENTER_2_STEP_VERIFICATION_CODE" = "Enter 2-step verification code";

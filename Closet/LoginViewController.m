@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <TwitterKit/TwitterKit.h>
+#import <Firebase/Firebase.h>
 #import "User.h"
 
 
@@ -21,7 +22,25 @@
     [super viewDidLoad];
     // Twitter Digits Setup.
     
+    
+//    Firebase *fireBase = [[Firebase alloc] initWithUrl:@"https://torrid-heat-6978.firebaseio.com"];
+    
+    
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+        
+//        NSDictionary *userInfo = @{
+//                                 @"oauth_token" : session.authToken,
+//                                 @"oauth_token_secret": session.authTokenSecret,
+//                                 @"user_id":session.userID
+//                                 };
+//        
+//        NSLog(@"USERINFO: %@",userInfo);
+//        
+//        [fireBase authWithOAuthProvider:@"twitter" parameters:userInfo
+//               withCompletionBlock:^(NSError *error, FAuthData *authData) {
+//                   NSLog(@"Error: %@? or Auth Data: %@?", error, authData);
+//               }];
+        
         
         [self dismissViewControllerAnimated:YES completion:nil];
         NSLog(@"The has logged in.");
