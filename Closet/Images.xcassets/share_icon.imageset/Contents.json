@@ -7,7 +7,7 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "fotos_de_street_style_en_milan_fashion_week_1244584_800x1200.jpg"
+      "filename" : "one16.png"
     },
     {
       "idiom" : "universal",
@@ -16,6 +16,7 @@
   ],
   "info" : {
     "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "template-rendering-intent" : "template"
   }
 }

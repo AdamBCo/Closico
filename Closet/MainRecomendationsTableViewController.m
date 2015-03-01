@@ -8,10 +8,9 @@
 
 #import "MainRecomendationsTableViewController.h"
 #import "RecomendationsTableViewCell.h"
-#import "RESideMenu.h"
 #import "MyClosetManager.h"
 
-@interface MainRecomendationsTableViewController () <RESideMenuDelegate>
+@interface MainRecomendationsTableViewController ()
 
 @end
 
@@ -19,10 +18,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
 
-    
-    
 }
 
 - (void)viewDidLoad {

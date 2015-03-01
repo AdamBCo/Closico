@@ -16,19 +16,17 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dress_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-Pz-9eg">
                         <rect key="frame" x="8" y="8" width="84" height="84"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="7M0-Pz-9eg" secondAttribute="height" multiplier="1:1" id="f9X-Hb-ekB"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dresses" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlO-jb-Xki">
                         <rect key="frame" x="100" y="39" width="62" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="7M0-Pz-9eg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CKa-CY-Ozt"/>
                     <constraint firstItem="WlO-jb-Xki" firstAttribute="leading" secondItem="7M0-Pz-9eg" secondAttribute="trailing" constant="8" id="CON-gw-YkW"/>

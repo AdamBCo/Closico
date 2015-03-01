@@ -6,16 +6,17 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "fotos_de_street_style_en_milan_fashion_week_1244584_800x1200.jpg"
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "dollar185.png"
     }
   ],
   "info" : {
     "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "template-rendering-intent" : "template"
   }
 }

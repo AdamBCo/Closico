@@ -1,8 +1,9 @@
 //
-// RECommonFunctions.h
-// RESideMenu
+//  ASOBounceButtonViewDelegate.h
+//  ASOAnimatedButton
 //
-// Copyright (c) 2013-2014 Roman Efimov (https://github.com/romaonthego)
+//  Created by Agus Soedibjo on 27/2/14.
+//  Copyright (c) 2014 Agus Soedibjo. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,27 +22,18 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
 
 #import <Foundation/Foundation.h>
 
+@protocol ASOBounceButtonViewDelegate <NSObject>
 
-#ifndef REUIKitIsFlatMode
-#define REUIKitIsFlatMode() RESideMenuUIKitIsFlatMode()
-#endif
+@optional
 
-#ifndef kCFCoreFoundationVersionNumber_iOS_6_1
-#define kCFCoreFoundationVersionNumber_iOS_6_1 793.00
-#endif
+/**
+ *  Delegation method of ASOBounceButtonView, which will be called when each bounce button defined in ASOBounceButtonView instance is tapped
+ *
+ *  @param index Bounce button index to identify which bounce button is tapped
+ */
+- (void)didSelectBounceButtonAtIndex:(NSUInteger)index;
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
-#define IF_IOS7_OR_GREATER(...) \
-if (kCFCoreFoundationVersionNumber > kCFCoreFoundationVersionNumber_iOS_6_1) \
-{ \
-__VA_ARGS__ \
-}
-#else
-#define IF_IOS7_OR_GREATER(...)
-#endif
-
-BOOL RESideMenuUIKitIsFlatMode(void);
+@end

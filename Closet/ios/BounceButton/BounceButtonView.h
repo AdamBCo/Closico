@@ -1,8 +1,9 @@
 //
-// UIViewController+RESideMenu.m
-// RESideMenu
+//  BounceButtonView.h
+//  BounceButtonExample
 //
-// Copyright (c) 2013-2014 Roman Efimov (https://github.com/romaonthego)
+//  Created by Agus Soedibjo on 28/3/14.
+//  Copyright (c) 2014 Agus Soedibjo. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,34 +22,14 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
 
-#import "UIViewController+RESideMenu.h"
-#import "RESideMenu.h"
+#import "ASOBounceButtonView.h"
 
-@implementation UIViewController (RESideMenu)
+@interface BounceButtonView : ASOBounceButtonView
 
-- (RESideMenu *)sideMenuViewController
-{
-    UIViewController *iter = self.parentViewController;
-    while (iter) {
-        if ([iter isKindOfClass:[RESideMenu class]]) {
-            return (RESideMenu *)iter;
-        } else if (iter.parentViewController && iter.parentViewController != iter) {
-            iter = iter.parentViewController;
-        } else {
-            iter = nil;
-        }
-    }
-    return nil;
-}
-
-#pragma mark -
-#pragma mark IB Action Helper methods
-
-- (IBAction)presentLeftMenuViewController:(id)sender
-{
-    [self.sideMenuViewController presentLeftMenuViewController];
-}
+@property (weak, nonatomic) IBOutlet UIButton *menuItem1;
+@property (weak, nonatomic) IBOutlet UIButton *menuItem2;
+@property (weak, nonatomic) IBOutlet UIButton *menuItem3;
+@property (weak, nonatomic) IBOutlet UIButton *menuItem4;
 
 @end

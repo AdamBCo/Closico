@@ -35,15 +35,14 @@
 		87A9FEDB1AA2726B0060E1DA /* RecomendationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEDA1AA2726B0060E1DA /* RecomendationsTableViewCell.m */; };
 		87A9FEDE1AA2783F0060E1DA /* MyClosetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEDD1AA2783F0060E1DA /* MyClosetManager.m */; };
 		87A9FEE11AA27E280060E1DA /* MyClosetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEE01AA27E280060E1DA /* MyClosetViewController.m */; };
-		87A9FEEA1AA285DF0060E1DA /* SideBarRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEE71AA285DF0060E1DA /* SideBarRootViewController.m */; };
-		87A9FEEB1AA285DF0060E1DA /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEE91AA285DF0060E1DA /* LeftMenuViewController.m */; };
-		87A9FEF51AA285FE0060E1DA /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEEE1AA285FE0060E1DA /* ContentViewController.m */; };
-		87A9FEF61AA285FE0060E1DA /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEF01AA285FE0060E1DA /* RECommonFunctions.m */; };
-		87A9FEF71AA285FE0060E1DA /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEF21AA285FE0060E1DA /* RESideMenu.m */; };
-		87A9FEF81AA285FE0060E1DA /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEF41AA285FE0060E1DA /* UIViewController+RESideMenu.m */; };
 		87A9FEFE1AA28D140060E1DA /* MyClosetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FEFC1AA28D140060E1DA /* MyClosetTableViewCell.m */; };
 		87A9FEFF1AA28D140060E1DA /* MyClosetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A9FEFD1AA28D140060E1DA /* MyClosetTableViewCell.xib */; };
 		87A9FF021AA2995C0060E1DA /* PossibleItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF011AA2995C0060E1DA /* PossibleItemsViewController.m */; };
+		87A9FF051AA2FFE40060E1DA /* RecomendationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF041AA2FFE40060E1DA /* RecomendationDetailViewController.m */; };
+		87A9FF0F1AA303A60060E1DA /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 87A9FF071AA303A60060E1DA /* .gitkeep */; };
+		87A9FF101AA303A60060E1DA /* ASOBounceButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF0A1AA303A60060E1DA /* ASOBounceButtonView.m */; };
+		87A9FF111AA303A60060E1DA /* ASOTwoStateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF0E1AA303A60060E1DA /* ASOTwoStateButton.m */; };
+		87A9FF141AA305180060E1DA /* BounceButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9FF131AA305180060E1DA /* BounceButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,23 +105,21 @@
 		87A9FEDD1AA2783F0060E1DA /* MyClosetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClosetManager.m; sourceTree = "<group>"; };
 		87A9FEDF1AA27E280060E1DA /* MyClosetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClosetViewController.h; sourceTree = "<group>"; };
 		87A9FEE01AA27E280060E1DA /* MyClosetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClosetViewController.m; sourceTree = "<group>"; };
-		87A9FEE61AA285DF0060E1DA /* SideBarRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarRootViewController.h; sourceTree = "<group>"; };
-		87A9FEE71AA285DF0060E1DA /* SideBarRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarRootViewController.m; sourceTree = "<group>"; };
-		87A9FEE81AA285DF0060E1DA /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
-		87A9FEE91AA285DF0060E1DA /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
-		87A9FEED1AA285FE0060E1DA /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
-		87A9FEEE1AA285FE0060E1DA /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
-		87A9FEEF1AA285FE0060E1DA /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
-		87A9FEF01AA285FE0060E1DA /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
-		87A9FEF11AA285FE0060E1DA /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
-		87A9FEF21AA285FE0060E1DA /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
-		87A9FEF31AA285FE0060E1DA /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
-		87A9FEF41AA285FE0060E1DA /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		87A9FEFB1AA28D140060E1DA /* MyClosetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClosetTableViewCell.h; sourceTree = "<group>"; };
 		87A9FEFC1AA28D140060E1DA /* MyClosetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClosetTableViewCell.m; sourceTree = "<group>"; };
 		87A9FEFD1AA28D140060E1DA /* MyClosetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyClosetTableViewCell.xib; sourceTree = "<group>"; };
 		87A9FF001AA2995C0060E1DA /* PossibleItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PossibleItemsViewController.h; sourceTree = "<group>"; };
 		87A9FF011AA2995C0060E1DA /* PossibleItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PossibleItemsViewController.m; sourceTree = "<group>"; };
+		87A9FF031AA2FFE40060E1DA /* RecomendationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationDetailViewController.h; sourceTree = "<group>"; };
+		87A9FF041AA2FFE40060E1DA /* RecomendationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationDetailViewController.m; sourceTree = "<group>"; };
+		87A9FF071AA303A60060E1DA /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		87A9FF091AA303A60060E1DA /* ASOBounceButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASOBounceButtonView.h; sourceTree = "<group>"; };
+		87A9FF0A1AA303A60060E1DA /* ASOBounceButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASOBounceButtonView.m; sourceTree = "<group>"; };
+		87A9FF0B1AA303A60060E1DA /* ASOBounceButtonViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASOBounceButtonViewDelegate.h; sourceTree = "<group>"; };
+		87A9FF0D1AA303A60060E1DA /* ASOTwoStateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASOTwoStateButton.h; sourceTree = "<group>"; };
+		87A9FF0E1AA303A60060E1DA /* ASOTwoStateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASOTwoStateButton.m; sourceTree = "<group>"; };
+		87A9FF121AA305180060E1DA /* BounceButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceButtonView.h; sourceTree = "<group>"; };
+		87A9FF131AA305180060E1DA /* BounceButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +176,11 @@
 				87A9FEFB1AA28D140060E1DA /* MyClosetTableViewCell.h */,
 				87A9FEFC1AA28D140060E1DA /* MyClosetTableViewCell.m */,
 				87A9FEFD1AA28D140060E1DA /* MyClosetTableViewCell.xib */,
+				87A9FED91AA2726B0060E1DA /* RecomendationsTableViewCell.h */,
+				87A9FEDA1AA2726B0060E1DA /* RecomendationsTableViewCell.m */,
+				87A9FF031AA2FFE40060E1DA /* RecomendationDetailViewController.h */,
+				87A9FF041AA2FFE40060E1DA /* RecomendationDetailViewController.m */,
+				871F345D1AA16BF200D5B4A5 /* RecomendationsTableViewCell.xib */,
 				871F34631AA1719400D5B4A5 /* Recomendation TableView */,
 				871F34571AA16B3200D5B4A5 /* LoginViewController */,
 				871F34441AA14A4000D5B4A5 /* TypeOfItemViewController */,
@@ -186,7 +188,6 @@
 				871F34401AA147BE00D5B4A5 /* Brand View Controller */,
 				871F342C1AA120DF00D5B4A5 /* Model */,
 				871F34051AA11AEA00D5B4A5 /* Main.storyboard */,
-				87A9FEEC1AA285E60060E1DA /* SideBar */,
 				871F34081AA11AEB00D5B4A5 /* Images.xcassets */,
 				871F340A1AA11AEB00D5B4A5 /* LaunchScreen.xib */,
 				871F33FB1AA11AEA00D5B4A5 /* Supporting Files */,
@@ -197,6 +198,7 @@
 		871F33FB1AA11AEA00D5B4A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87A9FF061AA303A60060E1DA /* ios */,
 				871F33FC1AA11AEA00D5B4A5 /* Info.plist */,
 				871F33FD1AA11AEA00D5B4A5 /* main.m */,
 			);
@@ -286,9 +288,6 @@
 			children = (
 				871F34581AA16BB800D5B4A5 /* MainRecomendationsTableViewController.h */,
 				871F34591AA16BB800D5B4A5 /* MainRecomendationsTableViewController.m */,
-				87A9FED91AA2726B0060E1DA /* RecomendationsTableViewCell.h */,
-				87A9FEDA1AA2726B0060E1DA /* RecomendationsTableViewCell.m */,
-				871F345D1AA16BF200D5B4A5 /* RecomendationsTableViewCell.xib */,
 			);
 			name = "Recomendation TableView";
 			sourceTree = "<group>";
@@ -304,31 +303,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		87A9FEEC1AA285E60060E1DA /* SideBar */ = {
+		87A9FF061AA303A60060E1DA /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				87A9FEFA1AA288620060E1DA /* RESideMenu */,
-				87A9FEE61AA285DF0060E1DA /* SideBarRootViewController.h */,
-				87A9FEE71AA285DF0060E1DA /* SideBarRootViewController.m */,
-				87A9FEE81AA285DF0060E1DA /* LeftMenuViewController.h */,
-				87A9FEE91AA285DF0060E1DA /* LeftMenuViewController.m */,
+				87A9FF071AA303A60060E1DA /* .gitkeep */,
+				87A9FF081AA303A60060E1DA /* BounceButton */,
+				87A9FF0C1AA303A60060E1DA /* TwoStateButton */,
 			);
-			name = SideBar;
+			path = ios;
 			sourceTree = "<group>";
 		};
-		87A9FEFA1AA288620060E1DA /* RESideMenu */ = {
+		87A9FF081AA303A60060E1DA /* BounceButton */ = {
 			isa = PBXGroup;
 			children = (
-				87A9FEED1AA285FE0060E1DA /* ContentViewController.h */,
-				87A9FEEE1AA285FE0060E1DA /* ContentViewController.m */,
-				87A9FEEF1AA285FE0060E1DA /* RECommonFunctions.h */,
-				87A9FEF01AA285FE0060E1DA /* RECommonFunctions.m */,
-				87A9FEF11AA285FE0060E1DA /* RESideMenu.h */,
-				87A9FEF21AA285FE0060E1DA /* RESideMenu.m */,
-				87A9FEF31AA285FE0060E1DA /* UIViewController+RESideMenu.h */,
-				87A9FEF41AA285FE0060E1DA /* UIViewController+RESideMenu.m */,
+				87A9FF121AA305180060E1DA /* BounceButtonView.h */,
+				87A9FF131AA305180060E1DA /* BounceButtonView.m */,
+				87A9FF091AA303A60060E1DA /* ASOBounceButtonView.h */,
+				87A9FF0A1AA303A60060E1DA /* ASOBounceButtonView.m */,
+				87A9FF0B1AA303A60060E1DA /* ASOBounceButtonViewDelegate.h */,
 			);
-			name = RESideMenu;
+			path = BounceButton;
+			sourceTree = "<group>";
+		};
+		87A9FF0C1AA303A60060E1DA /* TwoStateButton */ = {
+			isa = PBXGroup;
+			children = (
+				87A9FF0D1AA303A60060E1DA /* ASOTwoStateButton.h */,
+				87A9FF0E1AA303A60060E1DA /* ASOTwoStateButton.m */,
+			);
+			path = TwoStateButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +422,7 @@
 				871F34091AA11AEB00D5B4A5 /* Images.xcassets in Resources */,
 				871F34531AA1677300D5B4A5 /* TwitterKitResources.bundle in Resources */,
 				87A9FEFF1AA28D140060E1DA /* MyClosetTableViewCell.xib in Resources */,
+				87A9FF0F1AA303A60060E1DA /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,31 +457,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A9FF141AA305180060E1DA /* BounceButtonView.m in Sources */,
 				871F34621AA16C0C00D5B4A5 /* Recomendation.m in Sources */,
 				871F342A1AA11CDC00D5B4A5 /* BrandTableViewCell.m in Sources */,
 				871F34361AA141D400D5B4A5 /* Brand.m in Sources */,
 				87A9FEFE1AA28D140060E1DA /* MyClosetTableViewCell.m in Sources */,
+				87A9FF111AA303A60060E1DA /* ASOTwoStateButton.m in Sources */,
 				871F34391AA145AC00D5B4A5 /* User.m in Sources */,
 				871F34431AA147DD00D5B4A5 /* TypeOfItemViewController.m in Sources */,
 				871F34261AA11BD900D5B4A5 /* Item.m in Sources */,
 				87A9FEDB1AA2726B0060E1DA /* RecomendationsTableViewCell.m in Sources */,
-				87A9FEF71AA285FE0060E1DA /* RESideMenu.m in Sources */,
 				871F34011AA11AEA00D5B4A5 /* AppDelegate.m in Sources */,
-				87A9FEF51AA285FE0060E1DA /* ContentViewController.m in Sources */,
-				87A9FEF61AA285FE0060E1DA /* RECommonFunctions.m in Sources */,
 				87A9FF021AA2995C0060E1DA /* PossibleItemsViewController.m in Sources */,
 				87A9FEE11AA27E280060E1DA /* MyClosetViewController.m in Sources */,
 				87A9FEDE1AA2783F0060E1DA /* MyClosetManager.m in Sources */,
 				871F345A1AA16BB800D5B4A5 /* MainRecomendationsTableViewController.m in Sources */,
 				871F34321AA128D300D5B4A5 /* Reachability.m in Sources */,
+				87A9FF051AA2FFE40060E1DA /* RecomendationDetailViewController.m in Sources */,
 				871F33FE1AA11AEA00D5B4A5 /* main.m in Sources */,
 				871F34561AA167FB00D5B4A5 /* LoginViewController.m in Sources */,
-				87A9FEF81AA285FE0060E1DA /* UIViewController+RESideMenu.m in Sources */,
 				87A9FED81AA1AB4C0060E1DA /* ItemResultsCollectionViewController.m in Sources */,
 				871F342F1AA1285F00D5B4A5 /* MacysAPIClient.m in Sources */,
 				871F34231AA11B2600D5B4A5 /* BrandTableViewController.m in Sources */,
-				87A9FEEA1AA285DF0060E1DA /* SideBarRootViewController.m in Sources */,
-				87A9FEEB1AA285DF0060E1DA /* LeftMenuViewController.m in Sources */,
+				87A9FF101AA303A60060E1DA /* ASOBounceButtonView.m in Sources */,
 				871F344A1AA1530200D5B4A5 /* TOIDetailCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
